@@ -61,6 +61,9 @@ function addMark() {
         userWebName.classList.remove("is-valid");
         userWebURL.classList.remove("is-valid");
         clearForm();
+        
+
+
     }
 
 
@@ -206,48 +209,70 @@ function validateInputs(ele) {
 
 
 
-
 // alert function for no validation rules 
 function showAlert() {
     // Create overlay
-    var overlay = document.createElement('div');
-    overlay.className = 'alert-overlay';
+    // var overlay = document.createElement('div');
+    // overlay.className = 'alert-overlay';
+    
 
-    // Create alert box
-    var alertBox = document.createElement('div');
-    alertBox.className = 'alert-box';
-    alertBox.innerHTML = `
-    <div class="container text-start">
-    <div class="icons-container d-flex justify-content-between mb-5">
-        <div class="icons">
-            <span style="background-color: red;"></span>
-            <span style="background-color: yellow;"></span>
-            <span style="background-color: green;"></span>
-        </div>
-        <div>
-            <i id="closeButton1" class="fa-solid fa-xmark fs-3"></i>
-        </div>
-    </div>
+    // // Create alert box
+    // var alertBox = document.createElement('div');
+    // alertBox.className = 'alert-box';
+//     alertBox.innerHTML = `
+//     <div class="container text-start">
+//     <div class="icons-container d-flex justify-content-between mb-5">
+//         <div class="icons">
+//             <span style="background-color: red;"></span>
+//             <span style="background-color: yellow;"></span>
+//             <span style="background-color: green;"></span>
+//         </div>
+//         <div>
+//             <i id="closeButton1" class="fa-solid fa-xmark fs-3"></i>
+//         </div>
+//     </div>
  
-    <p class="fs-5 my-4 fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
-    <p><i class="fa-regular fa-circle-right me-2" style="color:#BB4120"></i>Site name must contain at least 3 characters.</p>
-    <p><i class="fa-regular fa-circle-right me-2" style="color:#BB4120"></i>Website Url must start with https://www or http://www <br> 
-    examples : <br> https://www.facebook.com <br> http://www.twitter.com/elonmusk 
-    </p>
+//     <p class="fs-5 my-4 fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
+//     <p><i class="fa-regular fa-circle-right me-2" style="color:#BB4120"></i>Site name must contain at least 3 characters.</p>
+//     <p><i class="fa-regular fa-circle-right me-2" style="color:#BB4120"></i>Website Url must start with https://www or http://www <br> 
+//     examples : <br> https://www.facebook.com <br> http://www.twitter.com/elonmusk 
+//     </p>
 
-</div>`;
+// </div>`;
 
 
     // Append elements
 
-    overlay.appendChild(alertBox);
-    document.body.appendChild(overlay);
+    // overlay.appendChild(alertBox);
+    // document.body.appendChild(overlay);
+
+        var overlay = document.querySelector('.alert-overlay');
+        var alertBox = document.querySelector('.alert-box');
+
+        overlay.classList.replace('d-none','d-flex');
+
+
 
     // Create close button
     var closeButton = document.getElementById('closeButton1');
     closeButton.addEventListener('click', function () {
-        document.body.removeChild(overlay);
+        overlay.classList.replace('d-flex','d-none');
     });
+
+
+
+function closeSlider(){
+    overlay.classList.replace('d-flex','d-none');
+
+}
+
+    overlay.addEventListener('click', function(e){
+        closeSlider();
+       
+      });
+      alertBox.addEventListener('click', function(e){
+        e.stopPropagation();
+      });
 
 
 }
