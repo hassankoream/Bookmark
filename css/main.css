@@ -207,4 +207,19 @@ td .btn-visit:hover {
 .fa-xmark{
     cursor: pointer;
 }
+
+.home-icon{
+    padding: 5px;
+    background-color: #3EA55B;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 10%;
+    left: 0;
     
+}
+.home-icon:hover{
+    color: var(--main-color);
+}
+.fa-bounce{
+    animation-iteration-count: 2;
+}

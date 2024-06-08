@@ -180,7 +180,7 @@ function deleteBookmark(deletedIndex) {
 // function to check Inputs validation
 function validateInputs(ele) {
     var regex = {
-        WebName: /^[a-z]{3,10}$/i,
+        WebName: /^[a-z]{3,}$/i,
         userUrl: /^(https?:\/\/(?:www\.)?)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{3,}\.(?:[a-z]{2,10})(\/.*)?$/i,
 
 
